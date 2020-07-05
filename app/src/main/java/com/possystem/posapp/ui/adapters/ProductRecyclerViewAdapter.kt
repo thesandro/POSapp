@@ -30,6 +30,7 @@ class ProductRecyclerViewAdapter(val items: ArrayList<ProductEntry>) :
         fun setItems(){
             model = items[adapterPosition]
             itemView.productName.text = model.name
+            itemView.parkId.text = model.parkId.toString()
             itemView.productPrice.text = model.price.toString()
             itemView.productQuantity.text = model.quantity.toString()
         }

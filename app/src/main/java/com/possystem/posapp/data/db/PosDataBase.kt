@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [ProductEntry::class],
-    version = 2,
+    version = 4,
     exportSchema = false
 )
 abstract class PosDataBase : RoomDatabase() {

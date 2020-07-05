@@ -11,18 +11,32 @@
         android:layout_weight="1"
         android:layout_height="0dp">
         <TextView
-            android:id="@+id/parkEmptyTV"
+            android:id="@+id/checkoutEmptyTV"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:text="@string/noParkedProducts"
+            android:text="@string/noProductsAdded"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/parkedProductsRecyclerView"
+            android:id="@+id/productsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent" />
     </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/parkButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/park"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sellButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/sell"/>
 </LinearLayout>

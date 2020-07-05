@@ -1,4 +1,4 @@
-package com.possystem.posapp.ui.home
+package com.possystem.posapp.ui.camera
 
 import android.os.Bundle
 import android.view.LayoutInflater

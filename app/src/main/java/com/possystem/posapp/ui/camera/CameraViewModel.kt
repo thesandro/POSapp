@@ -1,4 +1,4 @@
-package com.possystem.posapp.ui.home
+package com.possystem.posapp.ui.camera
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

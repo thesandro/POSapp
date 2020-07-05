@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">PosApp</string>
-    <string name="title_camera">Scanner</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_camera">სკანერი</string>
+    <string name="title_dashboard">გადადებული</string>
+    <string name="title_sell">გაყიდვა</string>
+    <string name="noProductsAdded">პროდუქტები არ არის დამატებული</string>
+    <string name="sell">გაყიდვა</string>
+    <string name="park">გადადება</string>
+    <string name="noParkedProducts">პროდუქტები არ არის გადადებული</string>
 </resources>

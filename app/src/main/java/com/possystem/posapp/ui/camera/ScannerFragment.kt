@@ -1,4 +1,4 @@
-package com.possystem.posapp.ui.home
+package com.possystem.posapp.ui.camera
 
 import android.os.Bundle
 import android.util.Log.d
@@ -9,8 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.zxing.Result
-import com.possystem.posapp.network.model.Product
-import com.possystem.posapp.ui.notifications.ProductsViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -49,13 +47,13 @@ class ScannerFragment : Fragment(),ZXingScannerView.ResultHandler {
         d(
             "logloglog", "Contents = " + rawResult.toString() + ", Format = " + rawResult.barcodeFormat.name
         )
-        val parameters = mapOf("format" to rawResult.barcodeFormat.name, "code" to rawResult.toString())
+        val parameters = mapOf( "barcode" to rawResult.toString())
 
 
         CoroutineScope(Dispatchers.Main).launch {
             val cameraViewModel = ViewModelProvider(this@ScannerFragment.parentFragment as CameraFragment).get(CameraViewModel::class.java)
             cameraViewModel.insert(parameters)
-            mScannerView.resumeCameraPreview(this@ScannerFragment);
+            mScannerView.resumeCameraPreview(this@ScannerFragment)
         }
     }
 }

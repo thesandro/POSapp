@@ -1,7 +1,6 @@
 package com.possystem.posapp
 
 import android.Manifest
-import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,8 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.possystem.posapp.ui.adapters.BottomNavigationViewPagerAdapter
 import com.possystem.posapp.ui.dashboard.DashboardFragment
-import com.possystem.posapp.ui.home.CameraFragment
-import com.possystem.posapp.ui.notifications.ProductsFragment
+import com.possystem.posapp.ui.camera.CameraFragment
+import com.possystem.posapp.ui.checkout.CheckoutFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener{
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
         val arrayFragments: ArrayList<Fragment> = ArrayList()
         arrayFragments.add(DashboardFragment())
         arrayFragments.add(CameraFragment())
-        arrayFragments.add(ProductsFragment())
+        arrayFragments.add(CheckoutFragment())
         viewPager.adapter = BottomNavigationViewPagerAdapter(this, arrayFragments)
         viewPager.registerOnPageChangeCallback(object :ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
