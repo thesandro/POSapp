@@ -18,14 +18,12 @@
             android:text="produt name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/parkId"
             android:text="produt name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/productPrice"

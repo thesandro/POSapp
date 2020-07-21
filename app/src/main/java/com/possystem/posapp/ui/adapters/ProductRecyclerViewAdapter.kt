@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.possystem.posapp.R
 import com.possystem.posapp.data.db.ProductEntry
-import com.possystem.posapp.network.model.Product
+import kotlinx.android.synthetic.main.parked_product_recyclerview_item_layout.view.*
 import kotlinx.android.synthetic.main.product_recyclerview_item_layout.view.*
 
 class ProductRecyclerViewAdapter(val items: ArrayList<ProductEntry>) :
@@ -29,10 +29,10 @@ class ProductRecyclerViewAdapter(val items: ArrayList<ProductEntry>) :
 
         fun setItems(){
             model = items[adapterPosition]
-            itemView.productName.text = model.name
-            itemView.parkId.text = model.parkId.toString()
-            itemView.productPrice.text = model.price.toString()
-            itemView.productQuantity.text = model.quantity.toString()
+            itemView.productName.text = "პროდუქტი: " + model.name
+            itemView.parkId.text = "გადადების ნომერი: " + model.parkId.toString()
+            itemView.productPrice.text = "ფასი: " + (model.price*model.quantity).toString() + " ლარი"
+            itemView.productQuantity.text = "რაოდენობა/წონა: " + model.quantity.toString()
         }
     }
 }

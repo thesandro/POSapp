@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.possystem.posapp.data.repository.PosRepository.Companion.getRepositoryInstance
+import com.possystem.posapp.network.model.ResponseMessage
 
 class CameraViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -14,7 +15,7 @@ class CameraViewModel(application: Application) : AndroidViewModel(application) 
     }
     val text: LiveData<String> = _text
 
-    suspend fun insert(map:Map<String,String>) {
-        repository.fetchInsertProductService(map)
+    suspend fun insert(map:Map<String,String>):ResponseMessage {
+        return repository.fetchInsertProductService(map)
     }
 }

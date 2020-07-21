@@ -3,12 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".ui.camera.CameraFragment">
-    <fragment
-        android:name="com.possystem.posapp.ui.camera.ScannerFragment"
-        android:id="@+id/cameraFragment"
+
+    <com.possystem.posapp.mlkit.camera.CameraSourcePreview
+        android:id="@+id/camera_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <include layout="@layout/camera_preview_overlay_kotlin"/>
+
+    </com.possystem.posapp.mlkit.camera.CameraSourcePreview>
+
+    <include
+        layout="@layout/top_action_bar_in_live_camera"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"/>
+
 
 </FrameLayout>
