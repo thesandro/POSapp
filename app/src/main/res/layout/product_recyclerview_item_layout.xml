@@ -10,30 +10,60 @@
     app:cardCornerRadius="10dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_height="match_parent"
         android:padding="10dp">
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/productName"
-            android:text="produt name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/parkId"
-            android:text="produt name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/productPrice"
-            android:text="100$"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/productQuantity"
-            android:text="100$"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/productName"
+                android:text="produt name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/productPrice"
+                android:text="100$"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/productQuantity"
+                android:text="100$"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/decrease"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/integer_number"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:text="0"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/increase"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -137,4 +137,7 @@ class PosRepository(application: Application) {
             productDao.upsert(product)
         }
     }
+    suspend fun changeProductQuantity(barcode:String,value:Int){
+        productDao.increaseProductQuantityBarCode(barcode, value.toDouble(), 0)
+    }
 }

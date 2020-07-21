@@ -7,12 +7,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.google.gson.Gson
 import com.possystem.posapp.R
-import com.possystem.posapp.network.DataLoader
-import com.possystem.posapp.network.Endpoints
-import com.possystem.posapp.ui.MainActivity
-import com.possystem.posapp.ui.camera.CameraViewModel
+import com.possystem.posapp.ui.NavigationActivity
 import kotlinx.android.synthetic.main.activity_log_in.*
 import kotlinx.android.synthetic.main.activity_log_in.emailET
 import kotlinx.android.synthetic.main.activity_log_in.passwordET
@@ -111,7 +107,7 @@ class LogInActivity : AppCompatActivity(), View.OnClickListener {
                 CoroutineScope(Dispatchers.Main).launch {
                     val response = loginViewModel.logIn(email,password,rememberMeLayout.tag == "1")
                     if(response.success){
-                        val intent = Intent(this@LogInActivity, MainActivity::class.java)
+                        val intent = Intent(this@LogInActivity, NavigationActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)

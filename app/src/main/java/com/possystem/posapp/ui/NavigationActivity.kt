@@ -23,7 +23,7 @@ import com.possystem.posapp.ui.camera.CameraFragment
 import com.possystem.posapp.ui.checkout.CheckoutFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener{
+class NavigationActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener{
 
     private val backStack = ArrayList<Int>()
     private var isBackPressEvent = false

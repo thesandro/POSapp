@@ -34,7 +34,7 @@ class CheckoutFragment : Fragment() {
         checkoutViewModel =
             ViewModelProvider(this).get(CheckoutViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_checkout, container, false)
-        adapter = ProductRecyclerViewAdapter(mutableArrayList)
+        adapter = ProductRecyclerViewAdapter(mutableArrayList,checkoutViewModel,viewLifecycleOwner)
         root.productsRecyclerView.adapter = adapter
         root.productsRecyclerView.layoutManager = LinearLayoutManager(this.context)
         checkoutViewModel.products.observe(viewLifecycleOwner, Observer {
@@ -85,7 +85,7 @@ class CheckoutFragment : Fragment() {
             fragmentTransaction?.remove(prev)
         }
         val dialogFragment = ParkSheetFragment(checkoutViewModel)
-        fragmentTransaction?.addToBackStack(dialogFragment.tag)//here MyDialog is my custom dialog
+        fragmentTransaction?.addToBackStack(dialogFragment.tag)
         dialogFragment.show(activity?.supportFragmentManager!!,"dialog")
 
     }

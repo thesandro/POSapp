@@ -35,4 +35,10 @@ class CheckoutViewModel(application: Application) : AndroidViewModel(application
             repository.deleteParkedProducts(0)
         }
     }
+
+    fun changeProductValue(barcode:String,value:Int){
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.changeProductQuantity(barcode,value)
+        }
+    }
 }

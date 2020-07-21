@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.possystem.posapp.ui.MainActivity
+import com.possystem.posapp.ui.NavigationActivity
 import com.possystem.posapp.R
 import com.possystem.posapp.data.user_preference.UserPreference
 import com.possystem.posapp.ui.activities.authentication.log_in.LogInActivity
@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
         val activity: Activity = if (UserPreference.getString(UserPreference.SESSION)!!.isEmpty())
             LogInActivity()
         else
-            MainActivity()
+            NavigationActivity()
         val intent = Intent(this, activity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
