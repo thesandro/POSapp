@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/totalSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="ჯამური ფასი: "
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/sellButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#6DBC3C"
+        android:text="@string/sell" />
+    <Button
+        android:id="@+id/checkoutCancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#D63636"
+        android:text="@string/cancel" />
+</LinearLayout>

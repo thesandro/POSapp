@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="50dp"
-                android:hint="მეილი"
+                android:hint="მოლარის პინი"
                 android:textColorHint="@color/mainTextColor"
                 app:backgroundTint="@color/colorPrimary"
                 app:hintTextColor="@color/colorPrimary">

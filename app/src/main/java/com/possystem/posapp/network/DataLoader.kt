@@ -60,8 +60,8 @@ object DataLoader {
     private val retrofitClient: Retrofit = Retrofit.Builder()
         .client(
             OkHttpClient.Builder().addInterceptor(interceptor)
-                .writeTimeout(5, TimeUnit.SECONDS)
-                .readTimeout(5, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
                  .build()
         )
         .addConverterFactory(ScalarsConverterFactory.create())

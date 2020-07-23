@@ -19,11 +19,11 @@ fun EditText.isEmailValid(context: Context) {
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             var drawable: Drawable? = null
-            if (Tools.isEmailValid(p0.toString())) {
+            tag = if (Tools.isEmailValid(p0.toString())) {
                 //drawable = ContextCompat.getDrawable(context, R.mipmap.ic_success)
-                tag = "1"
+                "1"
             }else
-                tag = "0"
+                "0"
             setCompoundDrawablesWithIntrinsicBounds(null, null, drawable, null)
         }
     })

@@ -47,31 +47,7 @@ class CheckoutFragment : Fragment() {
                 root.checkoutEmptyTV.visibility = View.GONE
         })
         root.sellButton.setOnClickListener {
-            CoroutineScope(Dispatchers.Main).launch {
-                if(mutableArrayList.isNotEmpty()) {
-                    val productList: MutableList<ProductSell> = arrayListOf()
-                    for (item in mutableArrayList) {
-                        productList.add(convertToSell(item))
-                    }
-                    val response = checkoutViewModel.sellProducts(productList)
-                    Toast.makeText(
-                        this@CheckoutFragment.context,
-                        response.message,
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
-                    if (response.success) {
-                        checkoutViewModel.clearCheckout()
-                    }
-                }
-                else{
-                    Toast.makeText(
-                        this@CheckoutFragment.context,
-                        App.instance.getContext().resources.getString(R.string.noProductsAdded),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
+            showBottomSellDialog()
         }
         root.parkButton.setOnClickListener {
             showBottomSheetDialog()
@@ -87,10 +63,18 @@ class CheckoutFragment : Fragment() {
         val dialogFragment = ParkSheetFragment(checkoutViewModel)
         fragmentTransaction?.addToBackStack(dialogFragment.tag)
         dialogFragment.show(activity?.supportFragmentManager!!,"dialog")
+    }
+    private fun showBottomSellDialog(){
+        val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+        val prev = activity?.supportFragmentManager?.findFragmentByTag("dialogsell")
+        if (prev != null) {
+            fragmentTransaction?.remove(prev)
+        }
+        val dialogFragment = CheckoutSheetFragment(this.requireContext(),checkoutViewModel)
+        fragmentTransaction?.addToBackStack(dialogFragment.tag)
+        dialogFragment.show(activity?.supportFragmentManager!!,"dialogsell")
+    }
 
-    }
-    private fun convertToSell(productEntry: ProductEntry): ProductSell {
-        return ProductSell(productEntry.barcode, productEntry.quantity, productEntry.measurement)
-    }
+
 
 }

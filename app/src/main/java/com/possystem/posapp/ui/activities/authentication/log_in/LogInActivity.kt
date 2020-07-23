@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.possystem.posapp.R
+import com.possystem.posapp.extensions.isEmailValid
+import com.possystem.posapp.tools.Tools
 import com.possystem.posapp.ui.NavigationActivity
 import kotlinx.android.synthetic.main.activity_log_in.*
 import kotlinx.android.synthetic.main.activity_log_in.emailET
@@ -35,34 +37,6 @@ class LogInActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-//    private fun setColor() {
-//        signUpTV.setColor(
-//            getString(R.string.new_user),
-//            ContextCompat.getColor(this, R.color.mainTextColor)
-//        )
-//        signUpTV.setColor(
-//            getString(R.string.sign_up),
-//            ContextCompat.getColor(this, R.color.colorPrimary)
-//        )
-//        signUpTV.setColor(
-//            getString(R.string.here),
-//            ContextCompat.getColor(this, R.color.mainTextColor)
-//        )
-//
-//    }
-
-//    private fun checkValidation(email: String) {
-//        if (emailET.isEmailValid(email.toString())) {
-//            d("log", "true")
-//            successIV.visibility = View.VISIBLE
-//            emailET.tag = "1"
-//        } else {
-//            successIV.visibility = View.INVISIBLE
-//            emailET.tag = "0"
-//        }
-//
-//
-//    }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
@@ -87,20 +61,7 @@ class LogInActivity : AppCompatActivity(), View.OnClickListener {
         val email = emailET.text.toString()
         val password = passwordET.text.toString()
         when {
-//            email.isEmpty() && password.isEmpty() ->
-//                Tools.errorDialog(
-//                    this,
-//                    getString(R.string.incorrect_request),
-//                    getString(R.string.empty_fields)
-//                )
-//
-//
-//            emailET.tag == "0" ->
-//                Tools.errorDialog(
-//                    this,
-//                    getString(R.string.incorrect_request),
-//                    getString(R.string.incorrect_email)
-//                )
+            email.isEmpty() && password.isEmpty() -> Toast.makeText(this,"არასწორი ინფორმაცია",Toast.LENGTH_SHORT).show()
 
             password.isNotEmpty() -> {
                 //spinKitLoader.visibility = View.VISIBLE
